@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sudoku Solver</title>
+        <link rel="stylesheet" href="static/styles.css">
+    </head>
+    <body>
+        <br>
+        <div class="center">
+            <div id="header">
+                <h1>Sudoku Solver</h1>
+            </div>
+        </div>
+        <div class="center">
+            <a href="/"><button id="restart-button">Home!</button></a>
+        </div>
+        <br>
+        <div class="center">
+            <table id="sudoku">
+                {% for i in range(9) %}
+                    {% if (i+1)%3==0 and i != 8 %}
+                    <tr class="under-border">
+                    {% else %}
+                    <tr>
+                    {% endif %}
+                        {% for j in range(9) %}
+                            {% if (j+1)%3==0 and j != 8 %}
+                            <td class="right-side-border">
+                            {% else %}
+                            <td>
+                            {% endif %}
+                                {% if sol[i][j] == prev[i][j] %}
+                                <input type="text" disabled="disabled" value={{ sol[i][j] }} class="user-input">
+                                {% else %}
+                                <input type="text" disabled="disabled" value={{ sol[i][j] }}>
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

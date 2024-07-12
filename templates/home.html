@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sudoku Solver</title>
+        <link rel="stylesheet" href="static/styles.css">
+    </head>
+    <body>
+        <br>
+        <div class="center">
+            <div id="header">
+                <h1>Sudoku Solver</h1>
+            </div>
+        </div>
+        <div class="center">
+            <form action="/solved" method="post">
+                <button id="solve-button" type="submit">Solve!</button>
+                <input type="text" name="sudoku" id="hidden">
+            </form>
+        </div>
+        <br>
+        <div class="center">
+            <table id="sudoku">
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>   
+                <tr class="under-border">
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr class="under-border">
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td class="right-side-border"><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                    <td><input type="text" maxlength="1" inputmode="numeric" class="square"></td>
+                </tr>
+            </table>
+        </div>
+        <script src="static/home.js"></script>
+    </body>
+</html>
