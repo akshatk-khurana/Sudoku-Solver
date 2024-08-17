@@ -1,4 +1,4 @@
-# 2048
+# Sudoku Solver
 A backtracking-based Sudoku solver with a frontend to input unsolved Sudoku problems and get completed solutions.
 
 # Usage
